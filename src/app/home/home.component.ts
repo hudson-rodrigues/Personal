@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild('close') div!: ElementRef;
+
   constructor() { }
+
+  public check = false;
 
   ngOnInit(): void {
   }
 
+  update() {
+    this.check = true;
+  }
 }
