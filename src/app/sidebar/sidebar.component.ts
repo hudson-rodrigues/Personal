@@ -17,11 +17,17 @@ export class SidebarComponent implements OnInit {
   }
 
   change() {
-    const dark = document.querySelector('body');
-    const mode = document.querySelector('mode-text');
-    console.log('testando');
-    console.log(dark);
-    dark?.classList.add('dark');
+    const dark: any = document.querySelector('body');
+    const mode: any = document.querySelector('.mode-text');
+
+    if(dark?.classList.contains('dark')){
+      mode.innerHTML = "Dark mode";
+      dark?.classList.remove('dark');
+    }
+    else {
+      mode.innerHTML = "Light mode";
+      dark?.classList.add('dark');
+    }
   }
 
   toogle() {
@@ -30,7 +36,6 @@ export class SidebarComponent implements OnInit {
     } else {
       this.body = true;
     }
-    console.log(this.body);
   }
 
 }
